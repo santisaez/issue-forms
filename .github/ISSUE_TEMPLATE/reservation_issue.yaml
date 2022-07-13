@@ -1,0 +1,37 @@
+---
+name: Reservation Issue
+description: Report an issue with a reservation managed by Whatever
+title: Reservation <ID> has issues
+labels: ["reservation/issue"]
+body:
+  - type: dropdown
+    id: asset
+    attributes:
+      label: Asset
+      description: What asset is affected?
+      options:
+        - Whatever Vitoria
+        - Whatever Madrid Cuatro Torres
+        - Whatever Madrid Palacio Real
+    validations:
+      required: true
+
+  - type: dropdown
+    id: teams
+    attributes:
+      label: What teams should be included?
+      multiple: true
+      options:
+        - Product
+        - Operations
+        - Sales
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
